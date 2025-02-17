@@ -72,12 +72,11 @@ public class ProductyCheckoutSuccessStepDef {
 //    }
     @Then("count on cart should match")
     public void count_product_in_cart(){
-        Assert.assertEquals(Integer.parseInt(chkOutModule.vrfNumOfProdInCart()), 6);
+        Assert.assertEquals(Integer.parseInt(chkOutModule.vrfNumOfProdInCart()), 5);
         System.out.println(Integer.parseInt(chkOutModule.vrfNumOfProdInCart()));
     }
 
-/////////////////////////////////////////////////////////////////
-///
+///////////////////////////compare sum of price is same as total price//////////////////////////////////////
 @And("Get Price of Individual Products")
 public float getPricesOfIndiProds() {
    List<Float> allPrices= chkOutModule.getPriceOfIndiProds();
@@ -111,4 +110,27 @@ public void validatePriceOfAllProds(){
         List<Float> sortedPrice =chkOutModule.getPriceOfIndiProds();
         System.out.println(sortedPrice);
     }
+
+    @And("click on name Z-A link")
+    public void clkSortByName() throws InterruptedException {
+        chkOutModule.clkSortByName();
+    }
+
+    @And("click on Price link HtoL")
+    public void clkPriceLinkHtoL() throws InterruptedException {
+        chkOutModule.clkSortHtoLPriceLink();
+    }
+    @Then("All product should be sorted by descending alphabetically")
+    public void verifyProductSortedAlphabettically(){
+        List<Float> sortedPrice =chkOutModule.getPriceOfIndiProds();
+        System.out.println(sortedPrice);
+    }
+
+    @Then("All product should be sorted by price high to low")
+    public void verifyProductSortedHtoL(){
+        List<Float> sortedPrice =chkOutModule.getPriceOfIndiProds();
+        System.out.println(sortedPrice);
+    }
+
+    /// ////////////////////////////////
 }
