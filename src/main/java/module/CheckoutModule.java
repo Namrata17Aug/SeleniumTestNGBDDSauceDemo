@@ -2,16 +2,21 @@ package module;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObject.CheckoutPageObject;
 import pageObject.LoginPageObject;
 
 import java.text.NumberFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CheckoutModule {
     WebDriver driver;
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
     public CheckoutModule(WebDriver driver){
         this.driver = driver;
@@ -24,12 +29,25 @@ public class CheckoutModule {
     public void clkSortContainer(){
         driver.findElement(CheckoutPageObject.sortingLinkContainer).click();
     }
+    public void clkSortByName() throws InterruptedException {
+        Select drpdwnEle = new Select(driver.findElement(CheckoutPageObject.sortingLinkContainer));
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(drpdwnEle.selectByIndex(1)));
+        //Thread.sleep(1000);
+        drpdwnEle.selectByIndex(1);
+        Thread.sleep(1000);
+    }
 
     public void clkSortLtoHPriceLink() throws InterruptedException {
         Select drpdwnEle = new Select(driver.findElement(CheckoutPageObject.sortingLinkContainer));
         Thread.sleep(1000);
         drpdwnEle.selectByIndex(2);
-        Thread.sleep(10000);
+        Thread.sleep(1000);
+    }
+    public void clkSortHtoLPriceLink() throws InterruptedException {
+        Select drpdwnEle = new Select(driver.findElement(CheckoutPageObject.sortingLinkContainer));
+        Thread.sleep(1000);
+        drpdwnEle.selectByIndex(3);
+        Thread.sleep(1000);
     }
 
     public void clkaddMultiProdTocart(){

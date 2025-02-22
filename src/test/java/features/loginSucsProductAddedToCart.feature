@@ -20,23 +20,23 @@ Feature: Invalid Login Functionality Tests
     When User add product to cart
     Then count on cart should match
 
-#  @sorting
-#  Scenario Verify sorting by name is working as expected
-#    When click on sort button
-#    And click on name Z-A link
-#    Then All product should be sorted by descending alphabetically
-#
+  @sorting
+  Scenario: Verify sorting by name is working as expected
+    When click on sort button
+    And click on name Z-A link
+    Then All product should be sorted by descending alphabetically
+
   @sorting
   Scenario: Verify sorting by price low to High is working as expected
     When click on sort button
     And click on Price link LtoH
     Then All product should be sorted by price low to high
 
-#  @sorting
-#  Scenario Verify sorting by price High to Low is working as expected
-#    When click on sort button
-#    And click on Price(High-Low) link
-#    Then All product should be sorted by price high to low
+  @sorting
+  Scenario: Verify sorting by price High to Low is working as expected
+    When click on sort button
+    And click on Price link HtoL
+    Then All product should be sorted by price high to low
 
 
 
