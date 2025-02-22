@@ -27,7 +27,7 @@ public class Hooks {
     @After
     public void AfterScenarioCloseBrowser(){
         //DriverFactory.getDriver().close();
-        DriverFactory.quitBrowser();
+        DriverFactory.getDriver().close();
     }
 
     @AfterStep

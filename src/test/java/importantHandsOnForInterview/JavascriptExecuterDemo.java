@@ -19,8 +19,8 @@ public class JavascriptExecuterDemo {
         driver.manage().window().maximize();
 
         WebElement inputEle = driver.findElement(By.xpath("//input[@id='name']"));
-
         JavascriptExecutor js = (JavascriptExecutor) driver;
+        //JavascriptExecutor js= (JavascriptExecutor) driver;
         js.executeScript("arguments[0].setAttribute('value','Nunu')",inputEle );
 
 

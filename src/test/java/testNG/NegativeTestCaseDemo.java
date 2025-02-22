@@ -40,4 +40,9 @@ public class NegativeTestCaseDemo extends TestCaseBase{
 
     }
 
+//    @AfterMethod
+//    public void afterTestMethod(){
+//        driver.quit();
+//    }
+
 }
