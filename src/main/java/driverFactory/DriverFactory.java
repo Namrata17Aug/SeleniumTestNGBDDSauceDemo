@@ -17,9 +17,9 @@ public class DriverFactory {
     public static void openUrl(String url){
         driver.get(url);
     }
-    public static void quitBrowser(){
-      driver.close();
-    }
+//    public static void quitBrowser(){
+//
+//    }
 
     public static WebDriver getDriver(){
         return driver;
